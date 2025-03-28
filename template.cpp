@@ -37,7 +37,7 @@ using namespace std;
 #define ff first
 #define PI 3.141592653589793238462
 #define set_bits __builtin_popcountll
-// #define sz(x) ((int)(x).size())
+#define sz(x) ((int)(x).size())
 #define all(x) (x).begin(), (x).end()
 #define v(_x) vector<_x>
 #define pii pair<int,int>
@@ -86,11 +86,11 @@ int fact[combSize];int modinv[combSize];
 // long long get_hash(string &s){long long hash=0;for(auto c:s) hash=(hash*31+(c-'a'+1))%MOD;return hash;}
 // long long ncr(long long n,long long r){if(n<0 || r<0 || r>n){return 0;}return (((fact[n]*modinv[r])%MOD)*modinv[n-r])%MOD;}
 
-long long fexpo(long long base,long long x){long long ans=1;while(x){if(x&1){ans=(base*ans)%MOD;}base=(base*base)%MOD;x>>=1;}return ans;}
+long long fexpo(long long base,long long x,int mod=MOD){long long ans=1;while(x){if(x&1){ans=(base*ans)%mod;}base=(base*base)%mod;x>>=1;}return ans;}
 
-
+const int haveTestCase=0;
 void solve(int testcase){
-    
+    cout<<fexpo(2,3);
 }
 
 void precomp();
@@ -106,9 +106,11 @@ int32_t main(){
 
     precomp();
     int t=1;
-    cin>>t;
-    while(t--){
-        solve(t+1);
+    if(haveTestCase){
+        cin>>t;
+    }
+    for(int i=1;i<=t;i++){
+        solve(t);
     }
     return 0;
 }
