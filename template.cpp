@@ -19,6 +19,11 @@ using namespace std;
 // #define vvl vector<vector<long long>>
 // #define vvvl vector<vector<vector<long long>>>
 
+const long long int SEED=chrono::steady_clock::now().time_since_epoch().count();
+mt19937_64 rng(SEED);
+inline long long int rnd(long long int l=0,long long int r=0xFFFFFFFFFFFFFFFLL)
+{return uniform_int_distribution<long long int>(l,r)(rng);}
+
 #define yes cout<<"YES\n";
 #define no cout<<"NO\n";
 
@@ -90,7 +95,7 @@ long long fexpo(long long base,long long x,int mod=MOD){long long ans=1;while(x)
 
 const int haveTestCase=0;
 void solve(int testcase){
-    cout<<fexpo(2,3);
+    
 }
 
 void precomp();
