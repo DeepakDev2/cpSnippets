@@ -1,3 +1,4 @@
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -93,6 +94,7 @@ int fact[combSize];int modinv[combSize];
 
 long long fexpo(long long base,long long x,int mod=MOD){long long ans=1;while(x){if(x&1){ans=(base*ans)%mod;}base=(base*base)%mod;x>>=1;}return ans;}
 
+int totalTestCase=1;
 const int haveTestCase=1;
 void solve(int testcase){
     
@@ -100,7 +102,6 @@ void solve(int testcase){
 
 void precomp();
 
-int totalTestCase=1;
 int32_t main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
