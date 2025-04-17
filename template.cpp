@@ -93,7 +93,8 @@ int fact[combSize];int modinv[combSize];
 
 long long fexpo(long long base,long long x,int mod=MOD){long long ans=1;while(x){if(x&1){ans=(base*ans)%mod;}base=(base*base)%mod;x>>=1;}return ans;}
 
-const int haveTestCase=0;
+int totalTextCase=1;
+const int haveTestCase=1;
 void solve(int testcase){
     
 }
@@ -110,12 +111,11 @@ int32_t main(){
     #endif
 
     precomp();
-    int t=1;
     if(haveTestCase){
-        cin>>t;
+        cin>>totalTestCase;
     }
     for(int i=1;i<=t;i++){
-        solve(t);
+        solve(i);
     }
     return 0;
 }
